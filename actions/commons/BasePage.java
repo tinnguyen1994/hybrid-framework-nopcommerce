@@ -73,7 +73,7 @@ public class BasePage {
 			driver.manage().addCookie(cookie);
 			System.out.println("Cookies : " + cookie );
 		}
-		sleepInSecond(3);
+		sleepInSecond(2);
 	}
 
 	public Alert waitForAlertPresence(WebDriver driver) {
@@ -87,7 +87,7 @@ public class BasePage {
 
 	public void canceltAlert(WebDriver driver) {
 		waitForAlertPresence(driver).dismiss();
-		;
+		
 	}
 
 	public String getTextAlert(WebDriver driver) {

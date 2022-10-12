@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="WordPress">
+	<listeners>
+		<listener class-name="commons.MethodListener" />
+		<!-- <listener class-name ="reportConfig.ReportNGListener" /> -->
+		<!-- <listener class-name ="reportConfig.ExtentReportListenerV2" /> -->
+		<listener class-name="reportConfig.AllureTestListener" />
+		<!-- <listener class-name="org.uncommons.reportng.HTMLReporter"/> -->
+		<!-- <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/> -->
+	</listeners>
+
+	<parameter name="urlAdmin"
+		value="http://localhost/automationtester/wp-admin"></parameter>
+	<parameter name="urlUser"
+		value="http://localhost/automationtester"></parameter>
+	<test name="Run on Chrome">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.wordpress.posts.Post_01_Create_Read_Update_Delete_Search" />
+		</classes>
+		<!-- <packages> -->
+		<!-- <package name="com.wordpress.posts"/> -->
+		<!-- </packages> -->
+	</test>
+
+</suite>

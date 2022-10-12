@@ -3,6 +3,7 @@ package commons;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.OpenOption;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.logging.Log;
@@ -21,6 +22,7 @@ import org.testng.Reporter;
 import org.testng.annotations.BeforeSuite;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import javafx.scene.layout.BorderRepeat;
 
 public class BaseTest {
 	private WebDriver driver;
@@ -30,6 +32,8 @@ public class BaseTest {
 	public void initBeforeSuit() {
 		deleteAllureReport();
 	}
+	
+
 
 	protected BaseTest() {
 		log = LogFactory.getLog(getClass());
@@ -63,7 +67,8 @@ public class BaseTest {
 			options.addArguments("--lang=vi");
 
 			driver = new ChromeDriver(options);
-		} else if (browserList == BrowserList.H_CHROME) {
+		}
+		else if (browserList == BrowserList.H_CHROME) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--headless");
@@ -98,57 +103,10 @@ public class BaseTest {
 		return driver;
 	}
 
-	protected WebDriver getBrowserDriverLiveGuru(String browserName) {
-		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
-		if (browserList == BrowserList.FIREFOX) {
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-		} else if (browserList == BrowserList.H_FIREFOX) {
-			WebDriverManager.firefoxdriver().setup();
-			FirefoxOptions options = new FirefoxOptions();
-			options.addArguments("--headless");
-			options.addArguments("window-size=1920x1080");
-
-			driver = new FirefoxDriver(options);
-		} else if (browserList == BrowserList.CHROME) {
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-		} else if (browserList == BrowserList.H_CHROME) {
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--headless");
-			options.addArguments("window-size=1920x1080");
-			driver = new ChromeDriver(options);
-		} else if (browserList == BrowserList.EDGE) {
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-		} else if (browserList == BrowserList.OPERA) {
-			WebDriverManager.operadriver().setup();
-			driver = new OperaDriver();
-		} else if (browserList == BrowserList.COCCOC) {
-			WebDriverManager.chromedriver().driverVersion("102.0.5005.61").setup();
-			ChromeOptions options = new ChromeOptions();
-			driver = new ChromeDriver(options);
-
-			if (GlobalConstands.OS_NAME.startsWith("Windows")) {
-				options.setBinary("C:\\Program Files\\CocCoc\\Browser\\Application\\browser.exe");
-			} else {
-				options.setBinary(".....");
-			}
-		} else if (browserList == BrowserList.BRAVE) {
-			WebDriverManager.chromedriver().driverVersion("102.0.5005.61").setup();
-			ChromeOptions options = new ChromeOptions();
-			options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
-			driver = new ChromeDriver(options);
-		} else {
-			throw new RuntimeException("Browser name invalid");
-		}
-		driver.manage().timeouts().implicitlyWait(GlobalConstands.LONG_TIMEOUT, TimeUnit.SECONDS);
-		driver.get(GlobalConstands.LIVE_GURU_USER);
-		return driver;
-	}
 
 	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+		
 		if (browserName.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
@@ -157,9 +115,8 @@ public class BaseTest {
 			FirefoxOptions options = new FirefoxOptions();
 			options.addArguments("--headless");
 			options.addArguments("window-size=1920x1080");
-
 			driver = new FirefoxDriver(options);
-		} else if (browserName.equals("chrome")) {
+		} else if (browserList == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		} else if (browserName.equals("h_chrome")) {
@@ -192,19 +149,33 @@ public class BaseTest {
 		return driver;
 	}
 
-	protected String getEvironmentUrl(String serverName) {
-		String envurl = null;
-		EnvironmentList environment = EnvironmentList.valueOf(serverName.toUpperCase());
-		if (environment == EnvironmentList.DEV) {
-			envurl = "https://demo.nopcommerce.com/";
-		} else if (environment == EnvironmentList.TESTING) {
-			envurl = "https://admin-demo.nopcommerce.com";
-		} else if (environment == EnvironmentList.STAGING) {
-			envurl = "https://demo.nopcommerce.com/";
-		} else if (environment == EnvironmentList.PRODUCTION) {
-			envurl = "https://admin-demo.nopcommerce.com";
+	protected String getEvironmentUrl(String enviromentName) {
+		String envUrl = null;
+		EnvironmentList environment = EnvironmentList.valueOf(enviromentName.toUpperCase());
+		
+		switch (environment) {
+		case DEV:
+			envUrl = "https://demo.nopcommerce.com/";
+			break;
+		case TESTING:
+			envUrl = "https://admin-demo.nopcommerce.com";
+			break;
+		case STAGING:
+			envUrl = "https://staging.nopcommerce.com";
+			break;
+		case PRE_PROD:
+			envUrl = "https://pre_prod.nopcommerce.com";
+			break;
+		case PROD:
+			envUrl = "https://prod.nopcommerce.com";
+			break;
+
+		default:
+			envUrl = null;
+			break;
 		}
-		return envurl;
+	
+		return envUrl;
 	}
 
 	protected void sleepInSecond(long time) {

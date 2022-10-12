@@ -1,0 +1,20 @@
+[2022-10-11 15:51:01,192] Register - Step 01 : Navigate to 'Register' page
+[2022-10-11 15:51:02,237] Register - Step 02 : Enter to Firstname text with value is 'Automation'
+[2022-10-11 15:51:02,367] Register - Step 03 : Enter to  Lastname textbox with value is 'FC'
+[2022-10-11 15:51:02,482] Register - Step 04 : Select dropdown 
+[2022-10-11 15:51:02,786] Register - Step 05 : Enter to Email textbox with value is 'automationfc715048912@fpt.edu'
+[2022-10-11 15:51:02,968] Register - Step 06 : Enter to Password textbox with value is '1234567'
+[2022-10-11 15:51:03,090] Register - Step 07 : Enter to ConfirmPassword textbox with value is '1234567'
+[2022-10-11 15:51:08,214] Register - Step 08 : click to Register button
+[2022-10-11 15:51:09,106] Register - Step 08 : Verify Register success message
+[2022-10-11 15:51:09,159] Register - Step 09 : Click to Logout link
+[2022-10-11 15:51:09,969] Login - Step 01 : Navigate to 'Login' page
+[2022-10-11 15:51:10,602] Login - Step 02 : Enter to Email textbox with value is 'automationfc715048912@fpt.edu'
+[2022-10-11 15:51:10,742] Login - Step 03 : Enter to Password textbox with value is '1234567'
+[2022-10-11 15:51:10,856] Login - Step 04 : Click to Login button
+[2022-10-11 15:51:11,604] Login - Step 05 : Verify My Account link Display
+[2022-10-11 15:51:11,676] My Account - Step 01 : Navigate to 'My Account' page
+[2022-10-11 15:51:12,343] My Account - Step 02 : Verify Customer Infor page Display 
+[2022-10-11 15:51:12,394] My Account - Step 03 : Verify FirstName textbox 
+[2022-10-11 15:51:12,604] OS name = windows 10
+[2022-10-11 15:51:12,604] Driver instance name = chromedriver: chrome on windows (64ab980b6786603b00a83a07003b3923)

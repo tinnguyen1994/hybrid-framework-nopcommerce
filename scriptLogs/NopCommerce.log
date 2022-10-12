@@ -1,0 +1,32 @@
+[2022-08-25 10:57:15,028] Register - Step 01 : Navigate to 'Register' page
+[2022-08-25 10:57:15,637] Register - Step 02 : Enter to Firstname text with value is 'Hang'
+[2022-08-25 10:57:15,753] Register - Step 03 : Enter to  Lastname textbox with value is 'Tran'
+[2022-08-25 10:57:15,839] Register - Step 04 : Enter to Email textbox with value is 'afc1170519268@mail.vn'
+[2022-08-25 10:57:15,929] Register - Step 05 : Enter to Password textbox with value is '123456'
+[2022-08-25 10:57:16,014] Register - Step 06 : Enter to ConfirmPassword textbox with value is '123456'
+[2022-08-25 10:57:16,120] Register - Step 07 : click to Register button
+[2022-08-25 10:57:16,930] Register - Step 08 : Verify Register success message
+[2022-08-25 10:57:16,986] Register - Step 09 : Click to Logout link
+[2022-08-25 10:57:17,700] Login - Step 01 : Navigate to 'Login' page
+[2022-08-25 10:57:18,226] Login - Step 02 : Enter to Email textbox with value is 'Hang'
+[2022-08-25 10:57:18,307] Login - Step 03 : Enter to Password textbox with value is '123456'
+[2022-08-25 10:57:18,401] Login - Step 04 : Click to Login button
+[2022-08-25 10:57:19,131] Login - Step 05 : Verify My Account link Display
+[2022-08-25 10:57:19,199] Login - Step 06 : Navigate to 'My Account' page
+[2022-08-25 10:57:19,781] Login - Step 07 : Verify Customer Infor page Display 
+[2022-08-25 11:30:16,044] Register - Step 01 : Navigate to 'Register' page
+[2022-08-25 11:30:16,784] Register - Step 02 : Enter to Firstname text with value is 'Hang'
+[2022-08-25 11:30:16,870] Register - Step 03 : Enter to  Lastname textbox with value is 'Tran'
+[2022-08-25 11:30:16,961] Register - Step 04 : Enter to Email textbox with value is 'afc222157035@mail.vn'
+[2022-08-25 11:30:17,047] Register - Step 05 : Enter to Password textbox with value is '123456'
+[2022-08-25 11:30:17,130] Register - Step 06 : Enter to ConfirmPassword textbox with value is '123456'
+[2022-08-25 11:30:17,238] Register - Step 07 : click to Register button
+[2022-08-25 11:30:18,248] Register - Step 08 : Verify Register success message
+[2022-08-25 11:30:18,301] Register - Step 09 : Click to Logout link
+[2022-08-25 11:30:19,019] Login - Step 01 : Navigate to 'Login' page
+[2022-08-25 11:30:19,682] Login - Step 02 : Enter to Email textbox with value is 'Hang'
+[2022-08-25 11:30:19,775] Login - Step 03 : Enter to Password textbox with value is '123456'
+[2022-08-25 11:30:19,854] Login - Step 04 : Click to Login button
+[2022-08-25 11:30:20,692] Login - Step 05 : Verify My Account link Display
+[2022-08-25 11:30:20,768] Login - Step 06 : Navigate to 'My Account' page
+[2022-08-25 11:30:21,498] Login - Step 07 : Verify Customer Infor page Display 
